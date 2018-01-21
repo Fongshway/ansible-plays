@@ -1,31 +1,22 @@
 ---
-# Playbook modeled on https://github.com/enginyoyen/ansible-best-practises
-#
-# Run entire playbook from control machine:
-# $ ansible-playbook linode.yaml --verbose -i ../etc/hosts
-#
-# Run specific tag(s) in playbook from control machine:
-# $ ansible-playbook linode.yaml --verbose -i ../etc/hosts --tags "aur,taskd"
 - name: linode.yaml
   hosts: linode
-  become: yes
-  become_user: root
   roles:
-    - {role: init_system,         tags: ["init"]}
-    - {role: install_packages,    tags: ["init"]}
-    - {role: user,                tags: ["init"]}
-    - {role: ssh,                 tags: ["init"]} # Depends on user role running first
-    - {role: python,              tags: ["init"]}
-    - {role: fongshway.oh-my-zsh, tags: ["init", "zsh"]}
-    - {role: taskd,               tags: ["taskd"]}
+    - {role: system_init,         tags: ["system_init",     "init"]}
+    - {role: package_install,     tags: ["package_install", "init"]}
+    - {role: user,                tags: ["user",            "init"]}
+    - {role: ssh,                 tags: ["ssh",             "init"]} # Depends on user role running first
+    - {role: python,              tags: ["python"]}
+    - {role: fongshway.oh-my-zsh, tags: ["zsh"]}
     - {role: fongshway.aur,       tags: ["aur"]}
+    - {role: taskd,               tags: ["taskd"]}
   vars_files:
     - ../group_vars/linode/common.yaml
     - ../group_vars/linode/fongshway.aur.yaml
     - ../group_vars/linode/fongshway.oh-my-zsh.yaml
-    - ../group_vars/linode/system_init.yaml
     - ../group_vars/linode/package_install.yaml
     - ../group_vars/linode/ssh.yaml
+    - ../group_vars/linode/system_init.yaml
     - ../group_vars/linode/taskd.yaml
     - ../group_vars/linode/user.yaml
     - ../group_vars/linode/vault.yaml

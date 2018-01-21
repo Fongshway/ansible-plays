@@ -10,6 +10,8 @@
 
 - name: Create sudoers file backup
   command: cp -f /etc/sudoers /etc/sudoers.bak
+  become: true
 
 - name: Final sudoers file check
   shell: visudo -q -c -f /etc/sudoers.tmp && cp -f /etc/sudoers.tmp /etc/sudoers
+  become: true

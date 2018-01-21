@@ -24,7 +24,7 @@
     - ../group_vars/linode/fongshway.aur.yaml
     - ../group_vars/linode/fongshway.oh-my-zsh.yaml
     - ../group_vars/linode/system_init.yaml
-    - ../group_vars/linode/install_packages.yaml
+    - ../group_vars/linode/package_install.yaml
     - ../group_vars/linode/ssh.yaml
     - ../group_vars/linode/taskd.yaml
     - ../group_vars/linode/user.yaml

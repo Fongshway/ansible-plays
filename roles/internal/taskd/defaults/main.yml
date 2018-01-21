@@ -1,0 +1,4 @@
+---
+taskd_data: /var/taskd
+taskd_user: taskd
+taskd_group: taskd

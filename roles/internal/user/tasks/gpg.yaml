@@ -1,0 +1,7 @@
+---
+# Step is needed for cower install from AUR.
+# See https://aur.archlinux.org/packages/cower/
+- name: gpg key stuff
+  command: gpg --recv-keys 1EB2638FF56C0C53
+  become: true
+  become_user: "{{ common_user }}"

@@ -1,0 +1,15 @@
+---
+- name: Add authorized keys to primary unprivileged user account
+  authorized_key:
+    user={{ common_user }}
+    key={{ item }}
+    state=present
+  with_items: "{{ ssh_pub_keys }}"
+
+- name: Set ssh daemon config
+  copy: src=sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=664
+  register: result
+
+- name: Restart ssh daemon
+  service: name=sshd state=restarted
+  when: result|changed

@@ -1,0 +1,2 @@
+---
+ssh_pub_keys: "{{ vault_ssh_pub_keys }}"

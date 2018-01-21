@@ -1,0 +1,7 @@
+# Files to ignore
+*.retry
+.vpass
+etc/hosts
+
+# Directories to ignore
+.vagrant

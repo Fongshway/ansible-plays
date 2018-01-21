@@ -1,0 +1,13 @@
+---
+- name: Set hostname
+  hostname: name={{ inventory_hostname_short }}
+  become: true
+
+- name: Initialize /etc/hosts
+  template:
+    src: etc/hosts.j2
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: 0644
+  become: true

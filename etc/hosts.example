@@ -1,0 +1,5 @@
+[local]
+fongshway ansible_connection=local ansible_python_interpreter=/usr/bin/python2
+
+[linode]
+45.33.50.178 ansible_connection=ssh ansible_user=kfong ansible_python_interpreter=/usr/bin/python2

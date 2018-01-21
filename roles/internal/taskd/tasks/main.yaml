@@ -1,0 +1,28 @@
+---
+- name: Create taskd user
+  user:
+    createhome=no
+    name={{ taskd_user }}
+    system=yes
+
+- name: Add taskd.service to /etc/systemd/system
+  template:
+    src: taskd.service.j2
+    dest: "/etc/systemd/system/taskd.service"
+    mode: 0644
+  become: yes
+  register: result
+
+- name: Restart taskd service and issue daemon-reload
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: taskd
+  when: result|changed
+
+- name: Enable taskd.service
+  systemd:
+    name: taskd
+    enabled: yes
+    state: started
+  when: result|changed

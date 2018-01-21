@@ -1,0 +1,5 @@
+---
+- name: Installing packages with pacman
+  pacman: name={{ item }} state=present
+  with_items: "{{ install_packages_list }}"
+  when: ansible_os_family == 'Arch Linux'

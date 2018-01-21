@@ -1,0 +1,9 @@
+---
+aur_packages:
+  - cower # dep for pacaur
+  - dropbox
+  - dropbox-cli
+  - pacaur
+  - vcsh
+aur_force_flag: false
+aur_user: "{{ common_user }}"

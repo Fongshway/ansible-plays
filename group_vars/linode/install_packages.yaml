@@ -1,0 +1,11 @@
+---
+install_packages_list:
+  - git
+  - nano
+  - nmap              # Open source tool for network exploration and security auditing
+  - pass              # Password manager
+  - task              # Taskwarrior To-Do list manager
+  - tmux              # Terminal multiplexer
+  - vim
+  - xorg-xauth        # For X11 forwarding
+  - xorg-xhost        # For X11 forwarding

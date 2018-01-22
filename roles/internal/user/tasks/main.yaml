@@ -1,8 +1,4 @@
 ---
-- name: Check if primary unprivileged user account initialization has been done
-  stat: path={{ ansible_env.HOME }}/.initialized_user
-  register: initialized_user
-
 - name: Create primary unprivileged user account
   user:
     name: "{{ common_user }}"
@@ -11,15 +7,4 @@
     append: yes
     shell: /bin/zsh
     generate_ssh_key: yes
-  when: not initialized_user.stat.exists
-
-# TODO Should probably go somewhere else
-- import_tasks: gpg.yaml
-  when: not initialized_user.stat.exists
-
-- name: Create /root/.initialized_user lock file
-  file:
-    path: "{{ ansible_env.HOME }}/.initialized_user"
-    state: touch
   become: true
-  when: not initialized_user.stat.exists

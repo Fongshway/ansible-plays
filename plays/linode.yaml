@@ -10,6 +10,7 @@
     - {role: fongshway.oh-my-zsh, tags: ["zsh"]}
     - {role: fongshway.aur,       tags: ["aur"]}
     - {role: taskd,               tags: ["taskd"]}
+    - {role: tmux,                tags: ["tmux"]}
   vars_files:
     - ../group_vars/linode/common.yaml
     - ../group_vars/linode/fongshway.aur.yaml

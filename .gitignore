@@ -5,3 +5,6 @@ etc/hosts
 
 # Directories to ignore
 .vagrant
+
+# Sublime
+*.sublime-workspace

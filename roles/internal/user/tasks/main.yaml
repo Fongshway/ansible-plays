@@ -3,6 +3,7 @@
   user:
     name: "{{ common_user }}"
     password: "{{ user_password }}"
+    group: users
     groups: wheel
     append: yes
     shell: /bin/zsh

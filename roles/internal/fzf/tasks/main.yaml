@@ -1,0 +1,12 @@
+---
+- name: Install fzf with pacman
+  pacman:
+    name: fzf
+    state: present
+  become: true
+  when: ansible_os_family == 'Arch Linux'
+
+- name: Add .fzf.zsh file
+  template:
+    src: .fzf.zsh
+    dest: "{{ ansible_env.HOME }}/.fzf.zsh"

@@ -12,6 +12,7 @@
     - {role: taskd,               tags: ["taskd"]}
     - {role: tmux,                tags: ["tmux"]}
     - {role: vcsh,                tags: ["vcsh"]}
+    - {role: fzf,                 tags: ["fzf"]}
   vars_files:
     - ../group_vars/linode/common.yaml
     - ../group_vars/linode/fongshway.aur.yaml

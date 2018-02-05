@@ -1,0 +1,21 @@
+---
+- name: Check that portainer data volume is present
+  docker_volume:
+    name: portainer_data
+    state: present
+
+- name: Restart portainer container
+  docker_container:
+    name: portainer
+    image: portainer/portainer
+    state: started
+    restart: yes
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+    env:
+        VIRTUAL_HOST: portainer.fongshway.com
+        VIRTUAL_NETWORK: nginx-proxy
+        VIRTUAL_PORT: 9000
+        LETSENCRYPT_HOST: portainer.fongshway.com
+        LETSENCRYPT_EMAIL: email@example.com

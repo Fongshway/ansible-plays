@@ -1,0 +1,38 @@
+---
+- name: Check that jenkins home volume is present
+  docker_volume:
+    name: jenkins_home
+    state: present
+
+- name: Check that secrets volume is present
+  docker_volume:
+    name: secrets
+    state: present
+
+- name: Add jenkins-user file
+  copy:
+    content: jenkins_admin
+    dest: /var/lib/docker/volumes/secrets/_data/jenkins-user
+  become: yes
+
+- name: Add jenkins-pass file
+  copy:
+    content: "{{ docker_jenkins_admin_password }}"
+    dest: /var/lib/docker/volumes/secrets/_data/jenkins-pass
+  become: yes
+
+- name: Restart jenkins container
+  docker_container:
+    name: jenkins
+    image: fongshway/jenkins
+    state: started
+    restart: yes
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - secrets:/run/secrets
+    env:
+        VIRTUAL_HOST: jenkins.fongshway.com
+        VIRTUAL_NETWORK: nginx-proxy
+        VIRTUAL_PORT: 8080
+        LETSENCRYPT_HOST: jenkins.fongshway.com
+        LETSENCRYPT_EMAIL: KevinMatthewFong+le@gmail.com

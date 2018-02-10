@@ -4,6 +4,17 @@
     name: portainer_data
     state: present
 
+- name: Check that secrets volume is present
+  docker_volume:
+    name: secrets
+    state: present
+
+- name: Add portainer-pass file
+  copy:
+    content: "{{ docker_portainer_admin_password }}"
+    dest: /var/lib/docker/volumes/secrets/_data/portainer-pass
+  become: yes
+
 - name: Restart portainer container
   docker_container:
     name: portainer
@@ -11,11 +22,13 @@
     state: started
     restart: yes
     volumes:
-      - portainer_data:/data
       - /var/run/docker.sock:/var/run/docker.sock:rw
+      - portainer_data:/data
+      - secrets:/run/secrets
+    entrypoint: ["/portainer --admin-password-file /run/secrets/portainer-pass"]
     env:
         VIRTUAL_HOST: portainer.fongshway.com
         VIRTUAL_NETWORK: nginx-proxy
         VIRTUAL_PORT: 9000
         LETSENCRYPT_HOST: portainer.fongshway.com
-        LETSENCRYPT_EMAIL: email@example.com
+        LETSENCRYPT_EMAIL: KevinMatthewFong+le@gmail.com

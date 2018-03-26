@@ -4,6 +4,8 @@
     name: jenkins_home
     state: present
 
+# TODO: Add task to check if host UID has access to jenkins_home volume.
+
 - name: Check that secrets volume is present
   docker_volume:
     name: secrets

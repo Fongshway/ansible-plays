@@ -27,7 +27,9 @@
     image: fongshway/jenkins
     state: started
     restart: yes
+    user: 1000:976 # TODO: Use variable instead of hard coding host docker group ID.
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
       - jenkins_home:/var/jenkins_home
       - secrets:/run/secrets
     env:

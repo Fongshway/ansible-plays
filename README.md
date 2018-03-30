@@ -11,7 +11,7 @@ Repo structure was inspired by [ansible-best-practises](https://github.com/engin
 
 * Python (>= 2.6 or >= 3.5)
 * pip
-* virtualenv
+* pipenv
 * git
 
 For more info, see [Control Machine Requirements](https://docs.ansible.com/ansible/latest/intro_installation.html#control-machine-requirements).
@@ -23,15 +23,15 @@ For more info, see [Control Machine Requirements](https://docs.ansible.com/ansib
 Clone the repo.
 
 ```
-$ git clone git@bitbucket.org:fongshway/ansible.git --branch master
+$ git clone -b master git@bitbucket.org:fongshway/ansible.git
 $ cd ansible
 ```
 
-Run the bootstrap.sh script and activate the virtualenv.
+Install requirements and activate the virtualenv.
 
 ```
-$ bash bootstrap.sh
-$ source venv/bin/activate
+$ pipenv install
+$ pipenv shell
 ```
 
 Create .vpass file and add the vault password.

@@ -1,2 +1,0 @@
-molecule
--e git+https://github.com/Fongshway/testinfra@master#egg=testinfra

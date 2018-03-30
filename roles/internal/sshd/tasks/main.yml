@@ -1,0 +1,25 @@
+---
+- name: Check that /etc/ssh directory exist
+  file:
+    dest: /etc/ssh
+    state: directory
+
+- name: Ensure ssh is present in Arch distros
+  pacman:
+    name: openssh
+    state: present
+  become: true
+  when: ansible_os_family == 'Archlinux'
+
+- name: Set ssh daemon config
+  template:
+    src: etc/ssh/sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0600
+    validate: /usr/sbin/sshd -t -f %s
+    backup: true
+  become: true
+  notify:
+    - Restart ssh daemon

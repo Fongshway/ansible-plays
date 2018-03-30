@@ -10,18 +10,3 @@
   template:
     src: known_hosts
     dest: "{{ ansible_env.HOME }}/.ssh/known_hosts"
-
-- name: Set ssh daemon config
-  template:
-    src: sshd_config
-    dest: /etc/ssh/sshd_config
-    owner: root
-    group: root
-    mode: 0664
-  become: true
-  register: result
-
-- name: Restart ssh daemon
-  service: name=sshd state=restarted
-  become: true
-  when: result|changed

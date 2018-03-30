@@ -2,6 +2,7 @@
 *.retry
 .vpass
 etc/hosts
+roles/external
 
 # Directories to ignore
 .vagrant

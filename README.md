@@ -23,7 +23,7 @@ For more info, see [Control Machine Requirements](https://docs.ansible.com/ansib
 Clone the repo.
 
 ```
-$ git clone --recurse-submodules git@bitbucket.org:fongshway/ansible-new.git --recursive --branch master
+$ git clone git@bitbucket.org:fongshway/ansible.git --branch master
 $ cd ansible
 ```
 
@@ -44,6 +44,12 @@ Create etc/hosts file and modify as needed.
 
 ```
 $ cp etc/hosts.example etc/hosts
+```
+
+Install required roles.
+
+```
+$ ansible-galaxy install -r requirements.yml -p roles/external
 ```
 
 ## Running playbooks

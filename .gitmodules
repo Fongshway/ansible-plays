@@ -1,8 +1,0 @@
-[submodule "roles/external/fongshway.oh-my-zsh"]
-	path = roles/external/fongshway.oh-my-zsh
-	url = git@mygithub:Fongshway/glennr.oh-my-zsh.git
-	branch = master
-[submodule "roles/external/fongshway.aur"]
-	path = roles/external/fongshway.aur
-	url = git@mygithub:Fongshway/ansible-archlinux_aur.git
-	branch = master

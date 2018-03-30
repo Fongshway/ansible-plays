@@ -1,0 +1,6 @@
+---
+- src: https://github.com/Fongshway/ansible-archlinux_aur.git
+  name: fongshway.aur
+
+- src: https://github.com/Fongshway/glennr.oh-my-zsh.git
+  name: fongshway.oh-my-zsh

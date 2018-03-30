@@ -1,5 +1,0 @@
----
-- name: Run vcsh clone on mr repo
-  command: vcsh clone git@bitbucket.org:fongshway/config-mr.git mr
-  args:
-    creates: "{{ ansible_env.HOME }}/.config/mr/config.d/mr.vcsh"

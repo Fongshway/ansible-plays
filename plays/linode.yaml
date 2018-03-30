@@ -11,7 +11,6 @@
     - {role: fongshway.aur,       tags: ["aur"]}
     - {role: taskd,               tags: ["taskd"]}
     - {role: tmux,                tags: ["tmux"]}
-    - {role: vcsh,                tags: ["vcsh"]}
     - {role: fzf,                 tags: ["fzf"]}
     - {role: docker_jenkins,      tags: ["docker", "jenkins"]}
     - {role: docker_portainer,    tags: ["docker", "portainer"]}

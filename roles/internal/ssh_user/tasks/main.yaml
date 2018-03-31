@@ -1,0 +1,24 @@
+---
+- name: Create primary unprivileged user account
+  user:
+    name: "{{ common_user }}"
+    password: "{{ ssh_user_password }}"
+    group: users
+    groups: wheel
+    append: yes
+    shell: /bin/zsh
+    generate_ssh_key: yes
+  become: true
+
+- name: Add authorized keys to primary unprivileged user account
+  authorized_key:
+    user: "{{ common_user }}"
+    key: "{{ item }}"
+    state: present
+  with_items: "{{ ssh_user_pub_keys }}"
+
+- name: Add known host pub keys to primary unprivileged user account
+  template:
+    src: .ssh/known_hosts.j2
+    dest: "{{ ansible_env.HOME }}/.ssh/known_hosts"
+    force: false

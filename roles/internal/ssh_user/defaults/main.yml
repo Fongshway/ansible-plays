@@ -1,0 +1,5 @@
+---
+ssh_user_password: password
+ssh_user_pub_keys:
+  - ""
+ssh_user_username: user

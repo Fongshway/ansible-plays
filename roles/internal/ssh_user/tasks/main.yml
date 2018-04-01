@@ -1,18 +1,25 @@
 ---
+- name: Ensure ssh is present in Arch distros
+  pacman:
+    name: openssh
+    state: present
+  become: true
+  when: ansible_os_family == 'Archlinux'
+
 - name: Create primary unprivileged user account
   user:
-    name: "{{ common_user }}"
+    name: "{{ ssh_user_username }}"
     password: "{{ ssh_user_password }}"
     group: users
     groups: wheel
-    append: yes
+    append: true
     shell: /bin/zsh
-    generate_ssh_key: yes
+    generate_ssh_key: true
   become: true
 
 - name: Add authorized keys to primary unprivileged user account
   authorized_key:
-    user: "{{ common_user }}"
+    user: "{{ ssh_user_username }}"
     key: "{{ item }}"
     state: present
   with_items: "{{ ssh_user_pub_keys }}"
@@ -20,5 +27,7 @@
 - name: Add known host pub keys to primary unprivileged user account
   template:
     src: .ssh/known_hosts.j2
-    dest: "{{ ansible_env.HOME }}/.ssh/known_hosts"
+    dest: ~/.ssh/known_hosts
     force: false
+  become: true
+  become_user: "{{ ssh_user_username }}"

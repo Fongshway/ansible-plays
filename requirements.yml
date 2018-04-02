@@ -4,3 +4,6 @@
 
 - src: https://github.com/Fongshway/glennr.oh-my-zsh.git
   name: fongshway.oh-my-zsh
+
+- src: https://github.com/Fongshway/ansible-role-ssh-user.git
+  name: fongshway.ssh_user

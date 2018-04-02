@@ -4,7 +4,7 @@
   roles:
     - {role: system_init,         tags: ["system_init",     "init"]}
     - {role: package_install,     tags: ["package_install", "init"]}
-    - {role: ssh_user,            tags: ["ssh_user",        "init"]}
+    - {role: fongshway.ssh_user,  tags: ["ssh_user",        "init"]}
     - {role: sshd,                tags: ["sshd",            "init"]}
     - {role: python,              tags: ["python"]}
     - {role: fongshway.oh-my-zsh, tags: ["zsh"]}
@@ -21,8 +21,8 @@
     - ../group_vars/linode/docker_portainer.yaml
     - ../group_vars/linode/fongshway.aur.yaml
     - ../group_vars/linode/fongshway.oh-my-zsh.yaml
+    - ../group_vars/linode/fongshway.ssh_user.yaml
     - ../group_vars/linode/package_install.yaml
-    - ../group_vars/linode/ssh_user.yaml
     - ../group_vars/linode/system_init.yaml
     - ../group_vars/linode/taskd.yaml
     - ../group_vars/linode/vault.yaml

@@ -2,8 +2,8 @@
 - src: https://github.com/Fongshway/ansible-archlinux_aur.git
   name: fongshway.aur
 
-- src: https://github.com/Fongshway/glennr.oh-my-zsh.git
-  name: fongshway.oh-my-zsh
-
 - src: https://github.com/Fongshway/ansible-role-ssh-user.git
   name: fongshway.ssh_user
+
+- src: https://github.com/Fongshway/ansible-role-zsh.git
+  name: fongshway.zsh

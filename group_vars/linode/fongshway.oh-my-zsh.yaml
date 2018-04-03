@@ -1,2 +1,0 @@
----
-oh_my_zsh_user: "{{ common_user }}"

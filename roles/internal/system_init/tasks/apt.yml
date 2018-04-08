@@ -1,0 +1,11 @@
+---
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
+  become: true
+
+- name: Upgrade all packages to the latest version
+  apt:
+    name: "*"
+    state: latest
+  become: true

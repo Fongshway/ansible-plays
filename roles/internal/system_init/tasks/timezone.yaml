@@ -1,3 +1,0 @@
----
-- name: Set timezone
-  shell: timedatectl set-timezone '{{ system_init_timezone }}'

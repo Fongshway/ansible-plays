@@ -1,0 +1,8 @@
+---
+- import_tasks: pacman.yml
+  when: ansible_os_family == 'Archlinux'
+- import_tasks: apt.yml
+  when: ansible_os_family == 'Debian'
+- import_tasks: hosts.yml
+- import_tasks: timezone.yml
+- import_tasks: sudoers.yml

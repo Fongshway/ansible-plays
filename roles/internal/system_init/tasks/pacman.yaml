@@ -1,9 +1,0 @@
----
-- name: First time pacman upgrade (i.e. pacman -Syu)
-  pacman: update_cache=yes upgrade=yes
-  become: true
-
-- name: Install pacman base-devel packages
-  pacman:
-    name: base-devel
-    state: present

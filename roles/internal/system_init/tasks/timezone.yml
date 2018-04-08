@@ -1,0 +1,4 @@
+---
+- name: Set timezone
+  command: timedatectl set-timezone '{{ system_init_timezone }}'
+  become: true

@@ -1,5 +1,0 @@
----
-- import_tasks: pacman.yaml
-- import_tasks: hosts.yaml
-- import_tasks: timezone.yaml
-- import_tasks: sudoers.yaml

@@ -12,9 +12,9 @@
     - {role: taskd,               tags: ["taskd"]}
     - {role: tmux,                tags: ["tmux"]}
     - {role: fzf,                 tags: ["fzf"]}
+    - {role: docker_nginx,        tags: ["docker", "nginx"]}
     - {role: docker_jenkins,      tags: ["docker", "jenkins"]}
     - {role: docker_portainer,    tags: ["docker", "portainer"]}
-    - {role: docker_nginx,        tags: ["docker", "nginx"]}
   vars_files:
     - ../group_vars/linode/common.yaml
     - ../group_vars/linode/docker_jenkins.yaml

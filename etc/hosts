@@ -1,0 +1,5 @@
+[local]
+localhost ansible_connection=local
+
+[linode]
+fongshway.com ansible_connection=ssh ansible_user=kfong

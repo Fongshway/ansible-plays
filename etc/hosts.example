@@ -1,5 +1,0 @@
-[local]
-localhost ansible_connection=local
-
-[linode]
-12.34.56.789 ansible_connection=ssh ansible_user=user

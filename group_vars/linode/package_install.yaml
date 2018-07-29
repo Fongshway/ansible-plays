@@ -9,3 +9,4 @@ package_install_list:
   - pass              # Password manager
   - task              # Taskwarrior To-Do list manager
   - vim
+  - zsh

@@ -5,5 +5,8 @@
 - src: https://github.com/Fongshway/ansible-role-ssh-user.git
   name: fongshway.ssh_user
 
+- src: https://github.com/Fongshway/ansible-role-user.git
+  name: fongshway.user
+
 - src: https://github.com/Fongshway/ansible-role-zsh.git
   name: fongshway.zsh

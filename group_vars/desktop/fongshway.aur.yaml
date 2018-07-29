@@ -1,0 +1,6 @@
+---
+aur_packages:
+  - cower # dep for pacaur
+  - pacaur
+aur_force_flag: false
+aur_user: "{{ common_user }}"

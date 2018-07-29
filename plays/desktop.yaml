@@ -1,0 +1,20 @@
+---
+- name: desktop.yaml
+  hosts: local
+  roles:
+    - {role: system_init,         tags: ["system_init",     "init"]}
+    - {role: package_install,     tags: ["package_install", "init"]}
+    - {role: fongshway.user,      tags: ["user",            "init"]}
+    - {role: python,              tags: ["python"]}
+    - {role: fongshway.zsh,       tags: ["zsh"]}
+    - {role: fongshway.aur,       tags: ["aur"]}
+    - {role: tmux,                tags: ["tmux"]}
+    - {role: fzf,                 tags: ["fzf"]}
+  vars_files:
+    - ../group_vars/desktop/common.yaml
+    - ../group_vars/desktop/fongshway.aur.yaml
+    - ../group_vars/desktop/fongshway.user.yaml
+    - ../group_vars/desktop/fongshway.zsh.yaml
+    - ../group_vars/desktop/package_install.yaml
+    - ../group_vars/desktop/system_init.yaml
+    - ../group_vars/desktop/vault.yaml

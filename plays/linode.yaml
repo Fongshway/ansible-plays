@@ -7,8 +7,7 @@
     - {role: fongshway.ssh_user,  tags: ["ssh_user",        "init"]}
     - {role: sshd,                tags: ["sshd",            "init"]}
     - {role: python,              tags: ["python"]}
-    - {role: fongshway.vcsh,      tags: ["vcsh"]}
-    - {role: fongshway.zsh,       tags: ["zsh"]}
+    - {role: dotfiles,            tags: ["dotfiles"]}
     - {role: fongshway.aur,       tags: ["aur"]}
     - {role: taskd,               tags: ["taskd"]}
     - {role: tmux,                tags: ["tmux"]}
@@ -20,6 +19,7 @@
     - ../group_vars/linode/common.yaml
     - ../group_vars/linode/docker_jenkins.yaml
     - ../group_vars/linode/docker_portainer.yaml
+    - ../group_vars/linode/dotfiles.yaml
     - ../group_vars/linode/fongshway.aur.yaml
     - ../group_vars/linode/fongshway.ssh_user.yaml
     - ../group_vars/linode/fongshway.zsh.yaml

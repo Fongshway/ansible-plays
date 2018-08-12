@@ -1,0 +1,7 @@
+---
+- name: Run antibody bundle command
+  shell: antibody bundle < ~/.zsh_plugins
+  args:
+    creates: "{{ dotfiles_antibody_home }}"
+  become: true
+  become_user: "{{ dotfiles_username }}"

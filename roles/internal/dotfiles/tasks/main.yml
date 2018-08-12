@@ -1,0 +1,10 @@
+---
+- name: Clone config repos via vcsh
+  command: vcsh clone -b {{ item.branch }} {{ item.url }} {{ item.name }}
+  args:
+    creates: ~/.config/vcsh/repo.d/zsh.git
+  become: true
+  become_user: "{{ dotfiles_username }}"
+  with_items: "{{ dotfiles_repos }}"
+
+- include: post.yml

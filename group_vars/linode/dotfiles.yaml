@@ -1,0 +1,5 @@
+---
+dotfiles_antibody_home: ~/.cache/antibody
+dotfiles_username: kfong
+dotfiles_repos:
+  - { name: zsh, branch: master, url: "git@bitbucket.org:fongshway/config-zsh.git" }

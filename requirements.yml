@@ -8,5 +8,10 @@
 - src: https://github.com/Fongshway/ansible-role-user.git
   name: fongshway.user
 
+- src: https://github.com/Fongshway/ansible-role-vcsh.git
+  name: fongshway.vcsh
+  version: "0.2.0"
+
 - src: https://github.com/Fongshway/ansible-role-zsh.git
   name: fongshway.zsh
+  version: "0.1.0"

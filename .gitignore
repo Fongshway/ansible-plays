@@ -1,7 +1,6 @@
 # Files to ignore
 *.retry
 .vpass
-roles/external
 
 # Directories to ignore
 .vagrant

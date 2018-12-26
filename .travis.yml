@@ -1,0 +1,20 @@
+dist: trusty
+sudo: required
+language: python
+python:
+  - "3.6"
+env:
+  global:
+    - VERSION_PIP=18.1
+    - VERSION_PIPENV=2018.11.26
+before_install:
+  - sudo apt-get update -qq
+  - pip install pip==$VERSION_PIP
+  - pip install pipenv==$VERSION_PIPENV
+install: pipenv install --deploy --dev
+script:
+  - ./bin/ansible-linter
+notifications:
+  email:
+    on_success: change
+    on_failure: always

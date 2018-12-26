@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# ansible-lint test runner script.
+# https://github.com/ansible/ansible-lint
+
+set -e
+
+function run()
+{
+    ansible-lint \
+        plays/desktop.yaml \
+        plays/linode.yaml \
+        roles/internal/docker_jenkins \
+        roles/internal/docker_nginx \
+        roles/internal/docker_portainer \
+        roles/internal/dotfiles \
+        roles/internal/fzf \
+        roles/internal/package_install \
+        roles/internal/python \
+        roles/internal/sshd \
+        roles/internal/system_init \
+        roles/internal/tmux
+}
+
+run

@@ -6,18 +6,19 @@
   with_items:
     - tmux
     - ruby
-  become: true
+  become: yes
   when: ansible_os_family == 'Arch Linux'
 
 - name: Checkout tmux-better-mouse-mode from Github
   git:
-    repo: https://github.com/NHDaly/tmux-better-mouse-mode
     dest: "{{ ansible_env.HOME }}/.config/tmux/tmux-scroll-copy-mode"
+    repo: https://github.com/NHDaly/tmux-better-mouse-mode
     update: no
+    version: master
 
 - name: Install tmuxinator with gem
   gem:
     name: tmuxinator
     state: present
     user_install: no
-  become: true
+  become: yes

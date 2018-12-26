@@ -7,6 +7,13 @@ Repo to store [Ansible](http://www.ansible.com/) playbooks used to provision:
 
 Repo structure was inspired by [ansible-best-practises](https://github.com/enginyoyen/ansible-best-practises).
 
+## Build Status
+
+| Branch        | Status        |
+| ------------- |:-------------:|
+| master        | [![Build Status](https://travis-ci.com/Fongshway/ansible-plays.svg?branch=master)](https://travis-ci.com/Fongshway/ansible-plays) |
+| develop       | [![Build Status](https://travis-ci.com/Fongshway/ansible-plays.svg?branch=develop)](https://travis-ci.com/Fongshway/ansible-plays) |
+
 ## Prerequisites for control machine
 
 * Python (>= 2.6 or >= 3.5)

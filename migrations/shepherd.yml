@@ -1,0 +1,15 @@
+---
+id: shepherd/pipenv
+title: Update Pipfile.lock
+adapter:
+  type: github
+  search_query: user:Fongshway path:/ filename:Pipfile.lock
+hooks:
+  should_migrate:
+    - ls .yamllint
+  apply:
+    - export PIPENV_VENV_IN_PROJECT=true
+    - pipenv --python ~/.pyenv/versions/3.6.6/bin/python
+    - pipenv update
+  pr_message:
+    - echo "Update Pipfile.lock"

@@ -7,7 +7,7 @@ name = "pypi"
 ansible = "*"
 ansible-lint = "*"
 docker = "*"
-molecule = "*"
+molecule = "==2.19.*"
 
 [dev-packages]
 

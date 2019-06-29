@@ -1,0 +1,13 @@
+---
+package_install_list:
+  - docker
+  - docker-compose
+  - git
+  - htop
+  - nano
+  - nmap              # Open source tool for network exploration and security auditing
+  - openssh
+  - pass              # Password manager
+  - task              # Taskwarrior To-Do list manager
+  - vim
+  - zsh

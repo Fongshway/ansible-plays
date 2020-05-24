@@ -8,10 +8,10 @@
     mode: 0440
   become: true
 
-- name: Create sudoers file backup
+- name: Create sudoers file backup  # noqa 301
   command: cp -f /etc/sudoers /etc/sudoers.bak
   become: true
 
-- name: Final sudoers file check
+- name: Final sudoers file check  # noqa 301
   shell: visudo -q -c -f /etc/sudoers.tmp && cp -f /etc/sudoers.tmp /etc/sudoers
   become: true
